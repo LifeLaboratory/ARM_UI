@@ -2,19 +2,41 @@
 
 .chat {
   max-width: 800px;
-  padding: 15px;
+  padding: 15px 0;
   background: #fff;
   margin-top: 20px;
+
+  &__messages {
+    padding: 10px 20px;
+  }
+
+  &__hints-container {
+    padding-top: 10px;
+  }
+
+  &__message-form {
+    display: flex;
+    align-items: flex-end;
+    padding: 10px 20px 0;
+    border-top: 1px solid @border-color;
+  }
+
+  &__message-field {
+    width: 100%;
+    margin-right: 10px;
+  }
 
   &__send-btn {
     font-family: @mainFont;
     height: 30px;
+    width: 120px;
     text-align: center;
     background: #00b956;
     color: #fff;
     border-radius: 50px;
     cursor: pointer;
-    line-height: 30px;
+    padding-bottom: 3px;
     font-size: 14px;
+    border: none;
   }
 }

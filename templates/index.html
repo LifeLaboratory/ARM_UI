@@ -14,7 +14,8 @@
 <div class="sidebar">
     <div class="operator-info sidebar__operator-info">
         <div class="operator-info__avatar-wrapper">
-            <img src="http://www.master-hard.com/wp-content/uploads/2008/08/avatar-thumb.jpg" alt="" class="operator-info__avatar-img">
+            <img src="http://www.master-hard.com/wp-content/uploads/2008/08/avatar-thumb.jpg" alt=""
+                 class="operator-info__avatar-img">
         </div>
 
         <div class="operator-info__name">Иван Василичъ</div>
@@ -37,13 +38,49 @@
 <div class="content-container">
 
     <div class="chat">
-        <div class="chat__message-field">
-            <textarea name="" id="" cols="30" rows="10">
-                MESSAGE
-            </textarea>
+
+        <div class="chat__messages">
+            <div class="chat-message">
+                У меня проблема! Что мне делать?
+            </div>
+
+            <div class="chat-message sent">
+                Не беспокойтесь, сейчас все решим!
+            </div>
+
         </div>
 
-        <div class="chat__send-btn">Отправить</div>
+
+        <div class="chat__hints-container">
+            <div class="chat-hint">
+                <div class="chat-hint__text">Вы пробовали выключить и снова включить?</div>
+                <div class="chat-hint__buttons-container">
+                    <div class="chat-hint__approve-btn"></div>
+                    <div class="chat-hint__reject-btn"></div>
+                </div>
+            </div>
+            <div class="chat-hint">
+                <div class="chat-hint__text">Вы пробовали выключить и снова включить?</div>
+                <div class="chat-hint__buttons-container">
+                    <div class="chat-hint__approve-btn"></div>
+                    <div class="chat-hint__reject-btn"></div>
+                </div>
+            </div>
+            <div class="chat-hint">
+                <div class="chat-hint__text">Вы пробовали выключить и снова включить?</div>
+                <div class="chat-hint__buttons-container">
+                    <div class="chat-hint__approve-btn"></div>
+                    <div class="chat-hint__reject-btn"></div>
+                </div>
+            </div>
+        </div>
+
+        <form class="chat__message-form" action="">
+            <textarea class="chat__message-field" name="" id="" cols="30" rows="10">MESSAGE</textarea>
+            <button class="chat__send-btn">Отправить</button>
+        </form>
+
+
     </div>
 
 </div>
