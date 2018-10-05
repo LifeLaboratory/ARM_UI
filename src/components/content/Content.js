@@ -88,7 +88,7 @@ const Content = () => (
             </div>
 
             <form className="chat__message-form" action="">
-                <textarea className="chat__message-field" name="" id="" cols="30" rows="10">MESSAGE</textarea>
+                <textarea className="chat__message-field" name="" id="" cols="30" rows="10" defaultValue={"MESSAGE"}/>
                 <button className="chat__send-btn">Отправить</button>
             </form>
 
