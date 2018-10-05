@@ -1,12 +1,22 @@
 import React from 'react'
+import SidebarProfileItem from "./SidebarProfileItem";
+import SidebarLinkItem from "./SidebarLinkItem";
 
 class SidebarItemList extends React.Component {
     render() {
+
+        const {items} = this.props;
+        const itemsToRender = items.map((item) => {
+            switch (item.type) {
+                case "linkItem":
+                    return <SidebarLinkItem description={item.description}/>;
+                case "profileItem":
+                    return <SidebarProfileItem profileImgSrc={item.profileImgSrc} name={item.name}/>;
+            }
+        });
+
         return (
-            <div className="sidebar__items-list">
-                <a href="" className="sidebar__item">Чаты</a>
-                <a href="" className="sidebar__item">Статистика</a>
-            </div>
+            itemsToRender
         )
     }
 }
