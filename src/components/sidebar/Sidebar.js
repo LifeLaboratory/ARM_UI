@@ -1,28 +1,10 @@
 import React from 'react'
 import SidebarItemsBlock from "./SidebarItemsBlock";
+import PropTypes from 'prop-types';
 
 class Sidebar extends React.Component {
     render() {
-        const blocks = [
-            {
-                id: 'profileBlock',
-                items: [
-                    {
-                        id:0,
-                        type: 'profileItem',
-                        profileImgSrc: 'http://www.master-hard.com/wp-content/uploads/2008/08/avatar-thumb.jpg',
-                        name: "Иванов Иван"
-                    }
-                ]
-            },
-            {
-                id: 'menuBlock',
-                items: [
-                    {type: 'linkItem', description: 'Чаты'},
-                    {type: 'linkItem', description: 'Статистика'}
-                ]
-            }
-        ];
+        const {blocks} = this.props;
 
         return (
             <div className="sidebar">
@@ -32,7 +14,10 @@ class Sidebar extends React.Component {
             </div>
         )
     }
-
 }
+
+Sidebar.propTypes = {
+    blocks: PropTypes.array
+};
 
 export default Sidebar

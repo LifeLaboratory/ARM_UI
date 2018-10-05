@@ -1,6 +1,8 @@
 import React from 'react'
 import SidebarProfileItem from "./SidebarProfileItem";
 import SidebarLinkItem from "./SidebarLinkItem";
+import Sidebar from "./Sidebar";
+import PropTypes from 'prop-types';
 
 class SidebarItemList extends React.Component {
     render() {
@@ -21,4 +23,10 @@ class SidebarItemList extends React.Component {
     }
 }
 
+SidebarItemList.propTypes = {
+    items: PropTypes.array
+};
+
 export default SidebarItemList
+
+
