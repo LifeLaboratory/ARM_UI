@@ -6,12 +6,12 @@ class SidebarItemList extends React.Component {
     render() {
 
         const {items} = this.props;
-        const itemsToRender = items.map((item) => {
+        const itemsToRender = items.map((item, index) => {
             switch (item.type) {
                 case "linkItem":
-                    return <SidebarLinkItem description={item.description}/>;
+                    return <SidebarLinkItem key={index} description={item.description}/>;
                 case "profileItem":
-                    return <SidebarProfileItem profileImgSrc={item.profileImgSrc} name={item.name}/>;
+                    return <SidebarProfileItem  key={index}  profileImgSrc={item.profileImgSrc} name={item.name}/>;
             }
         });
 

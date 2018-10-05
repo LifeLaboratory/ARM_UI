@@ -8,7 +8,8 @@ class SidebarItemsBlock extends React.Component {
         const {items} = this.props;
 
         return (
-            <SidebarItemList items={items}/>
+            [<SidebarItemList key="itemList" items={items}/>,
+                <hr key="separator"/>]
         )
     }
 }

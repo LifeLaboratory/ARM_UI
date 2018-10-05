@@ -8,6 +8,7 @@ class Sidebar extends React.Component {
                 id: 'profileBlock',
                 items: [
                     {
+                        id:0,
                         type: 'profileItem',
                         profileImgSrc: 'http://www.master-hard.com/wp-content/uploads/2008/08/avatar-thumb.jpg',
                         name: "Иванов Иван"
@@ -25,10 +26,8 @@ class Sidebar extends React.Component {
 
         return (
             <div className="sidebar">
-                {blocks.map(block => {
-                    return (
-                        [<SidebarItemsBlock id={block.id} items={block.items}/>, <hr/>]
-                    )
+                {blocks.map((block) => {
+                    return <SidebarItemsBlock key={block.id} id={block.id} items={block.items}/>
                 })}
             </div>
         )
