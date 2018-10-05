@@ -14,6 +14,15 @@ class SidebarProfileItem extends React.Component {
                 </div>
 
                 <div className="operator-info__name">{name}</div>
+
+                <div className="operator-info__link">Профиль</div>
+
+                <div className="operator-info__status active">
+                    В работе
+                </div>
+
+                <div className="operator-info__link">Выход</div>
+
             </div>
         )
     }
