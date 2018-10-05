@@ -6,9 +6,53 @@ const Content = () => (
 
         <div className="chat-list">
 
+            <div className="chat-list__category-container">
+                <div className="chat-list__category active">Открытые</div>
+                <div className="chat-list__category">Архив</div>
+            </div>
+
+            <div className="chat-list-item chat-list__item">
+                <div className="chat-list-item__head">
+                    <div className="chat-list-item__name">Вася Пупкин</div>
+                    <div className="chat-list-item__date">06.10.2018</div>
+                </div>
+                <div className="chat-list-item__last-message">
+                    У меня ничего не работает! Помогите!!!
+                </div>
+            </div>
+
+            <div className="chat-list-item chat-list__item">
+                <div className="chat-list-item__head">
+                    <div className="chat-list-item__name">Вася Пупкин</div>
+                    <div className="chat-list-item__date">06.10.2018</div>
+                </div>
+                <div className="chat-list-item__last-message">
+                    У меня ничего не работает! Помогите!!!
+                </div>
+            </div>
+
+            <div className="chat-list-item chat-list__item">
+                <div className="chat-list-item__head">
+                    <div className="chat-list-item__name">Вася Пупкин</div>
+                    <div className="chat-list-item__date">06.10.2018</div>
+                </div>
+                <div className="chat-list-item__last-message">
+                    У меня ничего не работает! Помогите!!!
+                </div>
+            </div>
+
+            <div className="chat-list-item chat-list__item">
+                <div className="chat-list-item__head">
+                    <div className="chat-list-item__name">Вася Пупкин</div>
+                    <div className="chat-list-item__date">06.10.2018</div>
+                </div>
+                <div className="chat-list-item__last-message">
+                    У меня ничего не работает! Помогите!!!
+                </div>
+            </div>
         </div>
 
-        <div className="chat">
+        <div className="chat disabled-block">
             <div className="chat__messages">
                 <div className="chat-message">
                     У меня проблема! Что мне делать?

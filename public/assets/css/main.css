@@ -184,6 +184,60 @@
   left: auto;
   right: -8px;
 }
+.chat-list {
+  margin-top: 20px;
+  max-width: 800px;
+  font-family: "GTWalsheimPro", sans-serif;
+}
+.chat-list__category-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  margin-bottom: 15px;
+}
+.chat-list__category {
+  margin-right: 7px;
+  cursor: pointer;
+}
+.chat-list__category:hover {
+  text-decoration: underline;
+}
+.chat-list__category.active {
+  text-decoration: underline;
+}
+.chat-list__category:last-child {
+  margin-right: 0;
+}
+.chat-list__item {
+  margin-bottom: 10px;
+}
+.chat-list-item {
+  background: #fff;
+  font-family: "GTWalsheimPro", sans-serif;
+  padding: 5px 0;
+  transition: box-shadow 0.1s ease-out;
+}
+.chat-list-item:hover {
+  cursor: pointer;
+  box-shadow: 0 3px 7px 3px rgba(0, 0, 0, 0.1);
+}
+.chat-list-item__head {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #D8D8D8;
+}
+.chat-list-item__date {
+  font-size: 12px;
+}
+.chat-list-item__last-message {
+  padding: 10px 20px;
+}
 @font-face {
   font-family: "GTWalsheimPro";
   src: url(../fonts/GTWalsheimPro.otf) format("truetype");
