@@ -1,16 +1,13 @@
 import React from 'react'
 import OperatorInfo from "./OperatorInfo";
+import SidebarItemList from "./SidebarItemList";
 
 class Sidebar extends React.Component {
     render() {
-        return(
+        return (
             <div className="sidebar">
-              <OperatorInfo/>
-
-                <div className="sidebar__items-list">
-                    <a href="" className="sidebar__item">Чаты</a>
-                    <a href="" className="sidebar__item">Статистика</a>
-                </div>
+                <OperatorInfo/>
+                <SidebarItemList/>
             </div>
         )
     }
