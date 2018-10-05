@@ -93,6 +93,7 @@
 }
 .chat__hints-container {
   padding-top: 10px;
+  overflow-y: auto;
 }
 .chat__message-form {
   display: -ms-flexbox;
@@ -105,6 +106,7 @@
 .chat__message-field {
   width: 100%;
   margin-right: 10px;
+  padding: 10px 15px;
 }
 .chat__send-btn {
   font-family: "GTWalsheimPro", sans-serif;
@@ -160,6 +162,27 @@
   max-width: 80%;
   background-color: #f2f2f2;
   margin-bottom: 10px;
+  padding: 10px 20px;
+  position: relative;
+}
+.chat-message:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  bottom: 0;
+  left: -8px;
+  border-width: 0 0 10px 8px;
+  border-color: transparent transparent #f2f2f2 transparent;
+}
+.chat-message.sent {
+  margin-left: 20%;
+}
+.chat-message.sent:before {
+  border-width: 0 8px 10px 0;
+  left: auto;
+  right: -8px;
 }
 @font-face {
   font-family: "GTWalsheimPro";
@@ -171,6 +194,9 @@
 }
 body {
   background-color: #ededed;
+}
+.disabled-block {
+  display: none;
 }
 .content-container {
   padding-left: 270px;

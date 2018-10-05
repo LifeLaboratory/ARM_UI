@@ -4,8 +4,11 @@ const Content = () => (
 
     <div className="content-container">
 
-        <div className="chat">
+        <div className="chat-list">
 
+        </div>
+
+        <div className="chat">
             <div className="chat__messages">
                 <div className="chat-message">
                     У меня проблема! Что мне делать?
@@ -14,9 +17,7 @@ const Content = () => (
                 <div className="chat-message sent">
                     Не беспокойтесь, сейчас все решим!
                 </div>
-
             </div>
-
 
             <div className="chat__hints-container">
                 <div className="chat-hint">
