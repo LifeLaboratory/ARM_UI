@@ -2,7 +2,12 @@
   "name": "ARM_UI",
   "version": "0.0.1",
   "private": true,
-  "devDependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "gulp": "^3.9.1",
+    "gulp-less": "^4.0.1",
+    "gulp-postcss": "^8.0.0"
+  },
   "dependencies": {
     "@babel/core": "7.1.0",
     "@svgr/webpack": "2.4.1",
@@ -59,7 +64,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=node"
+    "test": "node scripts/test.js --env=node",
+    "watchLess": "gulp watch"
   },
   "browserslist": [
     ">0.2%",
