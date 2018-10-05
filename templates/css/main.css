@@ -84,20 +84,82 @@
 }
 .chat {
   max-width: 800px;
-  padding: 15px;
+  padding: 15px 0;
   background: #fff;
   margin-top: 20px;
+}
+.chat__messages {
+  padding: 10px 20px;
+}
+.chat__hints-container {
+  padding-top: 10px;
+}
+.chat__message-form {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  padding: 10px 20px 0;
+  border-top: 1px solid #D8D8D8;
+}
+.chat__message-field {
+  width: 100%;
+  margin-right: 10px;
 }
 .chat__send-btn {
   font-family: "GTWalsheimPro", sans-serif;
   height: 30px;
+  width: 120px;
   text-align: center;
   background: #00b956;
   color: #fff;
   border-radius: 50px;
   cursor: pointer;
-  line-height: 30px;
+  padding-bottom: 3px;
   font-size: 14px;
+  border: none;
+}
+.chat-hint {
+  padding: 10px 20px;
+  border-top: 1px solid #D8D8D8;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  font-family: "GTWalsheimPro", sans-serif;
+}
+.chat-hint:hover {
+  background: #F2F2F2;
+  cursor: pointer;
+}
+.chat-hint__buttons-container {
+  width: 35px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+.chat-hint__approve-btn,
+.chat-hint__reject-btn {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.chat-hint__approve-btn {
+  background: #00B956;
+}
+.chat-hint__reject-btn {
+  background: #eb5a40;
+}
+.chat-hint__buttons-container {
+  display: -ms-flexbox;
+  display: flex;
+}
+.chat-message {
+  max-width: 80%;
+  background-color: #f2f2f2;
+  margin-bottom: 10px;
 }
 @font-face {
   font-family: "GTWalsheimPro";
