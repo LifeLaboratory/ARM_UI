@@ -8,7 +8,7 @@ class SidebarProfileItem extends React.Component {
         console.log(this.props)
 
         return (
-            <div>
+            <div className="operator-info">
                 <div className="operator-info__avatar-wrapper">
                     <img src={profileImgSrc} alt="" className="operator-info__avatar-img"/>
                 </div>

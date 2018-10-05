@@ -7,6 +7,14 @@
   font-family: "GTWalsheimPro", sans-serif;
   background: #fff;
 }
+.sidebar hr {
+  height: 5px;
+  border: none;
+  background: #D8D8D8;
+}
+.sidebar hr:last-child {
+  display: none;
+}
 .sidebar__operator-info {
   border-bottom: 4px solid #D8D8D8;
 }

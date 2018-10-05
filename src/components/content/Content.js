@@ -52,7 +52,7 @@ const Content = () => (
             </div>
         </div>
 
-        <div className="chat disabled-block">
+            <div className="chat disabled-block">
             <div className="chat__messages">
                 <div className="chat-message">
                     У меня проблема! Что мне делать?
