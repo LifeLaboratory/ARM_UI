@@ -1,6 +1,6 @@
 import React from 'react'
 
-class AuthorizationRegistration extends React.Component {
+class Registration extends React.Component {
     render() {
         return (
             <form className="authorization" action="">
@@ -17,4 +17,4 @@ class AuthorizationRegistration extends React.Component {
     }
 }
 
-export default AuthorizationRegistration
+export default Registration

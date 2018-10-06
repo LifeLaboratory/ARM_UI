@@ -1,6 +1,6 @@
 import React from 'react'
 
-class AuthorizationLogin extends React.Component {
+class Authorization extends React.Component {
     render() {
         return (
             <form className="authorization" action="">
@@ -15,4 +15,4 @@ class AuthorizationLogin extends React.Component {
     }
 }
 
-export default AuthorizationLogin
+export default Authorization
