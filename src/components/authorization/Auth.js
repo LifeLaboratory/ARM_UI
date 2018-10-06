@@ -1,7 +1,9 @@
 import React from 'react'
 
-class Authorization extends React.Component {
+class Auth extends React.Component {
     render() {
+        const {session, authState} = this.props;
+
         return (
             <form className="authorization" action="">
                 <div className="authorization__title">Авторизация</div>
@@ -15,4 +17,4 @@ class Authorization extends React.Component {
     }
 }
 
-export default Authorization
+export default Auth

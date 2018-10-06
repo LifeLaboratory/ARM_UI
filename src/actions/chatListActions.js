@@ -23,6 +23,3 @@ export const CHATLIST_ACTIONS = {
     SELECT_ARCHIVED: 'SELECT_ARCHIVED',
 };
 
-
-/** ChatListActions: openChat(id), selectOpened, selectArchived
- */

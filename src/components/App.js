@@ -1,7 +1,8 @@
 import React from 'react'
 
 import SidebarContainer from '../containers/SidebarContainer'
-import ContentContainer from "./ContentContainer";
+import ContentContainer from "../containers/ContentContainer";
+import AuthContainer from "../containers/AuthContainer";
 
 
 class App extends React.Component {
@@ -10,6 +11,14 @@ class App extends React.Component {
     }
 
     render() {
+        console.log(this.props);
+        const {auth} = this.props;
+        const toRender = [];
+
+      /*  if (!auth || !auth.session) {
+            return <AuthContainer/>
+        }*/
+
         return (
             <div>
                 <SidebarContainer/>
