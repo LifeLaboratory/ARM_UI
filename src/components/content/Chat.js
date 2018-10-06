@@ -16,9 +16,9 @@ class Chat extends React.Component {
         ];
 
         const hints = [
-          'Вы пробовали выключить и снова включить?',
-          'Как давно наблюдается проблема?',
-          'Может просто так оставим?'
+            'Вы пробовали выключить и снова включить?',
+            'Как давно наблюдается проблема?',
+            'Может просто так оставим?'
         ];
 
         return (
@@ -31,19 +31,22 @@ class Chat extends React.Component {
                     })}
                 </div>
 
-                <div className="chat__hints-container">
-                    {hints.map(hint => {
-                        return (
-                            <ChatHint text={hint}/>
-                        )
-                    })}
+                <div className="chat__form-container">
+
+                    <div className="chat__hints-container">
+                        {hints.map(hint => {
+                            return (
+                                <ChatHint text={hint}/>
+                            )
+                        })}
+                    </div>
+
+                    <form className="chat__message-form" action="">
+                        <textarea className="chat__message-field" name="" id="" cols="30" rows="10"
+                                  placeholder="Напишите сообщение..."></textarea>
+                        <button className="chat__send-btn">Отправить</button>
+                    </form>
                 </div>
-
-                <form className="chat__message-form" action="">
-                    <textarea className="chat__message-field" name="" id="" cols="30" rows="10">MESSAGE</textarea>
-                    <button className="chat__send-btn">Отправить</button>
-                </form>
-
             </div>
 
         )

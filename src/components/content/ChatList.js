@@ -12,7 +12,7 @@ class ChatList extends React.Component {
             {
                 name: 'Василий Иваныч',
                 date: '06.10.2018',
-                text: 'алло! Ответь!'
+                text: 'алло! Ответь!',
             },
             {
                 name: 'Инокентий',
@@ -39,6 +39,8 @@ class ChatList extends React.Component {
             }
         ];
 
+        let selectedChat = 1;
+
         return (
             <div className="chat-list">
 
@@ -47,9 +49,12 @@ class ChatList extends React.Component {
                     <div className="chat-list__category">Архив</div>
                 </div>
 
-                {activeChats.map(chat => {
+                {activeChats.map((chat, index) => {
+                    console.log(selectedChat === index);
                     return (
-                        <ChatListItem name={chat.name} date={chat.data} text={chat.text}/>
+
+
+                        <ChatListItem id={index} active={selectedChat === index} name={chat.name} date={chat.date} text={chat.text}/>
                     )
                 })}
 
