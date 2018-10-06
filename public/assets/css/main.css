@@ -1,5 +1,6 @@
 .sidebar {
-  position: absolute;
+  position: fixed;
+  z-index: 10;
   left: 0;
   top: 0;
   width: 250px;
@@ -91,10 +92,16 @@
   background: #eb5a40;
 }
 .chat {
-  max-width: 800px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  width: 100%;
   padding: 15px 0;
   background: #fff;
-  margin-top: 20px;
+  margin-left: 10px;
 }
 .chat__messages {
   padding: 10px 20px;
@@ -102,6 +109,10 @@
 .chat__hints-container {
   padding-top: 10px;
   overflow-y: auto;
+  max-height: 200px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 .chat__message-form {
   display: -ms-flexbox;
@@ -156,9 +167,6 @@
   border-radius: 50%;
   cursor: pointer;
 }
-.chat-hint__approve-btn {
-  background: #00B956;
-}
 .chat-hint__reject-btn {
   background: #eb5a40;
 }
@@ -172,6 +180,7 @@
   margin-bottom: 10px;
   padding: 10px 20px;
   position: relative;
+  font-family: "GTWalsheimPro", sans-serif;
 }
 .chat-message:before {
   content: '';
@@ -193,16 +202,19 @@
   right: -8px;
 }
 .chat-list {
-  margin-top: 20px;
-  max-width: 800px;
+  max-width: 250px;
   font-family: "GTWalsheimPro", sans-serif;
+  background: #fff;
 }
 .chat-list__category-container {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: end;
       justify-content: flex-end;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  background: #fff;
+  padding: 10px 10px;
+  border-bottom: 1px solid #D8D8D8;
 }
 .chat-list__category {
   margin-right: 7px;
@@ -225,10 +237,20 @@
   font-family: "GTWalsheimPro", sans-serif;
   padding: 5px 0;
   transition: box-shadow 0.1s ease-out;
+  border-top: 1px solid #D8D8D8;
+  border-bottom: 1px solid #D8D8D8;
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 0;
+}
+.chat-list-item.active {
+  background: #00b956;
+  color: #fff;
 }
 .chat-list-item:hover {
   cursor: pointer;
-  box-shadow: 0 3px 7px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 7px 3px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 .chat-list-item__head {
   display: -ms-flexbox;
@@ -238,13 +260,54 @@
   -ms-flex-pack: justify;
       justify-content: space-between;
   padding: 10px 20px;
-  border-bottom: 1px solid #D8D8D8;
 }
 .chat-list-item__date {
   font-size: 12px;
 }
 .chat-list-item__last-message {
   padding: 10px 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.authorization {
+  background: #fff;
+  width: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-family: "GTWalsheimPro", sans-serif;
+}
+.authorization__title {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.authorization__btn {
+  width: 100%;
+  background: #00B956;
+  border: none;
+  height: 30px;
+  border-radius: 30px;
+  color: #fff;
+  font-family: "GTWalsheimPro", sans-serif;
+  line-height: 26px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+.authorization__field {
+  padding: 5px 20px 9px;
+  border: 1px solid #D8D8D8;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: "GTWalsheimPro", sans-serif;
+}
+.authorization__field:last-child {
+  margin-bottom: 0;
 }
 @font-face {
   font-family: "GTWalsheimPro";
@@ -261,6 +324,12 @@ body {
   display: none;
 }
 .content-container {
-  padding-left: 270px;
-  padding-right: 20px;
+  padding-left: 260px;
+  padding-right: 10px;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
 }

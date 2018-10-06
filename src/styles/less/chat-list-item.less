@@ -5,10 +5,21 @@
   font-family: @mainFont;
   padding: 5px 0;
   transition: box-shadow .1s ease-out;
+  border-top: 1px solid @border-color;
+  border-bottom: 1px solid @border-color;
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 0;
+  
+  &.active {
+    background: #00b956;
+    color: #fff;
+  }
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0 3px 7px 3px rgba(0,0,0,.1);
+    box-shadow: 0 1px 7px 3px rgba(0,0,0,.1);
+    z-index: 1;
   }
 
   &__head {
@@ -16,7 +27,6 @@
     align-items: flex-end;
     justify-content: space-between;
     padding: 10px 20px;
-    border-bottom: 1px solid @border-color;
   }
 
   &__name {
@@ -29,5 +39,8 @@
 
   &__last-message {
     padding: 10px 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

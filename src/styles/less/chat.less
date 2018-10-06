@@ -1,10 +1,13 @@
 @import "mixins";
 
 .chat {
-  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
   padding: 15px 0;
   background: #fff;
-  margin-top: 20px;
+  margin-left: 10px;
 
   &__messages {
     padding: 10px 20px;
@@ -13,6 +16,8 @@
   &__hints-container {
     padding-top: 10px;
     overflow-y: auto;
+    max-height: 200px;
+    height: max-content;
   }
 
   &__message-form {
