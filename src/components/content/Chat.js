@@ -4,25 +4,9 @@ import ChatHint from "./ChatHint";
 
 class Chat extends React.Component {
     render() {
-        const messages = [
-            {
-                type: 'received',
-                text: 'У меня проблема! Что мне делать?'
-            },
-            {
-                type: 'sent',
-                text: 'Не беспокойтесь, сейчас все решим!'
-            }
-        ];
-
-        const hints = [
-            'Вы пробовали выключить и снова включить?',
-            'Как давно наблюдается проблема?',
-            'Может просто так оставим?'
-        ];
 
         return (
-            <div className="chat">
+           {/* <div className="chat">
                 <div className="chat__messages">
                     {messages.map(message => {
                         return (
@@ -47,7 +31,7 @@ class Chat extends React.Component {
                         <button className="chat__send-btn">Отправить</button>
                     </form>
                 </div>
-            </div>
+            </div>*/}
 
         )
     }

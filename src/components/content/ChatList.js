@@ -1,66 +1,41 @@
 import React from 'react'
 import ChatListItem from "./ChatListItem";
+import ChatCategoryButton from "./ChatCategoryButton";
 
 class ChatList extends React.Component {
 
     render() {
-        const activeChats = [
-            {
-                name: 'Иван Василичъ',
-                date: '06.10.2018',
-                text: 'ПАМАГИТЕ! Не работает!!'
-            },
-            {
-                name: 'Василий Иваныч',
-                date: '06.10.2018',
-                text: 'алло! Ответь!',
-            },
-            {
-                name: 'Инокентий',
-                date: '06.10.2018',
-                text: 'ВСЕ СЛОМАЛОСЬ! СРОЧНО!'
-            }
-        ];
 
-        const archiveChats = [
-            {
-                name: 'Иван Василичъ',
-                date: '06.10.2018',
-                text: 'ПАМАГИТЕ! Не работает!!'
-            },
-            {
-                name: 'Василий Иваныч',
-                date: '06.10.2018',
-                text: 'алло! Ответь!'
-            },
-            {
-                name: 'Инокентий',
-                date: '06.10.2018',
-                text: 'ВСЕ СЛОМАЛОСЬ! СРОЧНО!'
-            }
-        ];
+        const {chats, openChat, selectedId, selectOpened, selectArchived, openedCategory} = this.props;
 
+        console.log(this.props);
         return (
             <div className="chat-list">
-
                 <div className="chat-list__category-container">
-                    <div onClick={this.changeCategory.bind(null, 'active')}
-                         className="chat-list__category active">Открытые
-                    </div>
-                    <div onClick={this.changeCategory(null, 'closed')} className="chat-list__category">Архив</div>
+                    <ChatCategoryButton clickHandler={selectOpened} selected={openedCategory === 'activeChats'}
+                                        value={"Открытые"}/>
+                    <ChatCategoryButton clickHandler={selectArchived} selected={openedCategory === 'archivedChats'}
+                                        value={"Архив"}/>
                 </div>
-
-                {activeChats.map((chat, index) => {
-                    return (
-                        <ChatListItem id={index} active={this.state.selectedChat === index} name={chat.name}
-                                      date={chat.date} text={chat.text}/>
-                    )
-                })}
+                {
+                    chats.map((chat) => {
+                        return (
+                            <ChatListItem
+                                id={chat.id}
+                                key={chat.id}
+                                name={chat.name}
+                                date={chat.date}
+                                text={chat.text}
+                                clickHandler={openChat}
+                                selected={selectedId === chat.id}
+                            />
+                        )
+                    })
+                }
 
             </div>
         )
     }
-
 }
 
 export default ChatList
