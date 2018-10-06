@@ -12,6 +12,8 @@ class Auth extends React.Component {
                 <input className="authorization__field" type="text" placeholder="Пароль"/>
 
                 <button className="authorization__btn">Войти</button>
+                <div className="authorization__link">регистрация</div>
+
             </form>
         )
     }

@@ -12,6 +12,8 @@ class Registration extends React.Component {
                 <input className="authorization__field" type="text" placeholder="Повторите пароль"/>
 
                 <button className="authorization__btn">Регистрация</button>
+                <div className="authorization__link">Уже есть аккаунт</div>
+
             </form>
         )
     }

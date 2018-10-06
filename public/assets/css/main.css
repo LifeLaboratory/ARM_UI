@@ -286,6 +286,11 @@
   margin-bottom: 20px;
   text-align: center;
 }
+.authorization__link {
+  text-align: right;
+  margin: 10px 0;
+  cursor: pointer;
+}
 .authorization__btn {
   width: 100%;
   background: #00B956;

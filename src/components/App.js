@@ -15,9 +15,9 @@ class App extends React.Component {
         const {auth} = this.props;
         const toRender = [];
 
-      /*  if (!auth || !auth.session) {
+        if (!auth || !auth.session) {
             return <AuthContainer/>
-        }*/
+        }
 
         return (
             <div>
