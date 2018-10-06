@@ -9,7 +9,6 @@ class ChatListItem extends React.Component {
         if (selected) {
             classList += ' active';
         }
-
         return (
             <div className={classList} onClick={() => {console.log('1');clickHandler(id)}} >
                 <div className="chat-list-item__head">

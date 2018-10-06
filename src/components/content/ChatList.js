@@ -8,7 +8,6 @@ class ChatList extends React.Component {
 
         const {chats, openChat, selectedId, selectOpened, selectArchived, openedCategory} = this.props;
 
-        console.log(this.props);
         return (
             <div className="chat-list">
                 <div className="chat-list__category-container">

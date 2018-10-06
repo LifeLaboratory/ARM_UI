@@ -1,14 +1,22 @@
 import React from 'react';
+import ChatMessages from "./ChatMessages";
+import ChatForm from "./ChatForm";
 
 class Chat extends React.Component {
     render() {
-        const {selectedId} = this.props;
-        if (!selectedId) {
-            console.log('asdsdfsd')
+        const {dialog} = this.props;
+
+        if (!dialog) {
             return [];
         }
 
-        return <div className="chat">To render</div>
+        const {messages, hints} = dialog;
+        return (
+            <div className="chat">
+                <ChatMessages messages={messages}/>
+                <ChatForm hints={hints}/>
+            </div>
+        )
     }
 
 }

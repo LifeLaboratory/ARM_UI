@@ -4,13 +4,15 @@ class ChatMessage extends React.Component {
     render() {
         let classList = 'chat-message';
 
-        if (this.props.type === 'sent') {
+        const {chatId, sender, text} = this.props;
+
+        if (sender === 'Operator') {
             classList += ' sent';
         }
 
         return (
             <div className={classList}>
-                {this.props.text}
+                {text}
             </div>
         )
     }
