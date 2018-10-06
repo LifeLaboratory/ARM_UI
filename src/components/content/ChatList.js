@@ -2,6 +2,21 @@ import React from 'react'
 import ChatListItem from "./ChatListItem";
 
 class ChatList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {activeCategory: 'active', selectedChat: -1};
+    }﻿
+
+    changeCategory(name) {
+        console.log('changeCategory function');
+
+        this.setState({activeCategory: name});
+    };
+
+    selectChat(id) {
+        this.setState({selectedChat: id});
+    };
+
     render() {
         const activeChats = [
             {
@@ -39,22 +54,20 @@ class ChatList extends React.Component {
             }
         ];
 
-        let selectedChat = 1;
-
         return (
             <div className="chat-list">
 
                 <div className="chat-list__category-container">
-                    <div className="chat-list__category active">Открытые</div>
-                    <div className="chat-list__category">Архив</div>
+                    <div onClick={this.changeCategory.bind(null, 'active')}
+                         className="chat-list__category active">Открытые
+                    </div>
+                    <div onClick={this.changeCategory(null, 'closed')} className="chat-list__category">Архив</div>
                 </div>
 
                 {activeChats.map((chat, index) => {
-                    console.log(selectedChat === index);
                     return (
-
-
-                        <ChatListItem id={index} active={selectedChat === index} name={chat.name} date={chat.date} text={chat.text}/>
+                        <ChatListItem id={index} active={this.state.selectedChat === index} name={chat.name}
+                                      date={chat.date} text={chat.text}/>
                     )
                 })}
 
