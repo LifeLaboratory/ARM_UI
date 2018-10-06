@@ -1,7 +1,7 @@
 import React from 'react'
-import ChatList from "./ChatList";
-import Chat from "./Chat";
 import ChatListContainer from "../../containers/ChatListContainer";
+import ChatContainer from "../../containers/ChatContainer";
+import Chat from "./Chat";
 
 class Content extends React.Component {
     render() {
@@ -9,6 +9,7 @@ class Content extends React.Component {
         return (
             <div className="content-container">
                 <ChatListContainer/>
+                <ChatContainer/>
             </div>
         )
     }

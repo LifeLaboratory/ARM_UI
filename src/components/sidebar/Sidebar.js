@@ -5,11 +5,12 @@ import {Iterable} from 'immutable';
 
 class Sidebar extends React.Component {
     render() {
-        const {blocks} = this.props;
+        const {blocks, onSwitchAfk} = this.props;
+
         return (
             <div className="sidebar">
                 {blocks.valueSeq().map((block) => {
-                    return <SidebarItemsBlock key={block.get('id')} id={block.get('id')} items={block.get('items')}/>
+                    return <SidebarItemsBlock onSwitchAfk={onSwitchAfk} key={block.get('id')} id={block.get('id')} items={block.get('items')}/>
                 })}
             </div>
         )

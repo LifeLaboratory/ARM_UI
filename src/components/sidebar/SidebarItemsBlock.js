@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 class SidebarItemsBlock extends React.Component {
 
     render() {
-        const {items} = this.props;
+        const {items, onSwitchAfk} = this.props;
         return (
-            [<SidebarItemList key="itemList" items={items}/>,
+            [<SidebarItemList onSwitchAfk={onSwitchAfk} key="itemList" items={items}/>,
                 <hr key="separator"/>]
         )
     }

@@ -1,13 +1,11 @@
 import {connect} from 'react-redux'
-import Sidebar from '../components/sidebar/Sidebar'
-import {SidebarConfiguration} from "../constants/SidebarConfiguration";
-import {fromJS} from 'immutable';
-import ChatList from "../components/content/ChatList";
+import Chat from "../components/content/Chat";
 
 const mapStateToProps = state => {
+    const {chatListReducer} = state;
     const {chatReducer} = state;
-
-    return {}
+    const {selectedId} = chatListReducer;
+    return {selectedId}
 };
 
 const mapDispatchToProps = dispatch => ({});

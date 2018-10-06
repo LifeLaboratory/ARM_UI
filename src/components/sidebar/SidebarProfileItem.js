@@ -1,9 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types';
 
 class SidebarProfileItem extends React.Component {
     render() {
-        const {profileImgSrc, name} = this.props;
+        const {profileImgSrc, name, afk, onSwitchAfk} = this.props;
+        let statusClassList = "operator-info__status active";
+
+        if (afk) {
+            statusClassList += ' afk'
+        }
 
         return (
             <div className="operator-info">
@@ -15,8 +19,8 @@ class SidebarProfileItem extends React.Component {
 
                 <div className="operator-info__link">Профиль</div>
 
-                <div className="operator-info__status active">
-                    В работе
+                <div className={statusClassList} onClick={() => {onSwitchAfk()}}>
+                    {afk ? 'Отошёл' : 'В работе'}
                 </div>
 
                 <div className="operator-info__link">Выход</div>
@@ -25,6 +29,7 @@ class SidebarProfileItem extends React.Component {
         )
     }
 }
+
 /*
 
 SidebarProfileItem.propTypes = {

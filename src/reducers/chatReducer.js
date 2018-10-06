@@ -1,5 +1,3 @@
-import {CHATLIST_ACTIONS} from "../actions/chatListActions";
-
 const activeChats = [
     {
         id: 1,
@@ -42,33 +40,33 @@ const archiveChats = [
     }
 ];
 
+const messages = [
+    {
+        type: 'received',
+        text: 'У меня проблема! Что мне делать?'
+    },
+    {
+        type: 'sent',
+        text: 'Не беспокойтесь, сейчас все решим!'
+    }
+];
+
+const hints = [
+    'Вы пробовали выключить и снова включить?',
+    'Как давно наблюдается проблема?',
+    'Может просто так оставим?'
+];
 
 const initialState = {
-    selectedId: null,
-    openedCategory: 'activeChats',
-    activeChats: {
-        chats: activeChats
-    },
-    archivedChats: {
-        chats: archiveChats
-    }
+    messages: messages,
+    hints
 };
 
-export const chatListReducer = function (state = initialState, action) {
-    let openedCategory = 'activeChats'
+export const chatReducer = function (state = initialState, action) {
+    let openedCategory = 'activeChats';
     switch (action.type) {
-        case CHATLIST_ACTIONS.OPEN_CHAT:
-            const selectedId = parseInt(action.chatId);
-            const asd =  {...state, selectedId};
-            return asd;
-        case CHATLIST_ACTIONS.SELECT_OPENED:
-            openedCategory = 'activeChats';
-            return {...state, openedCategory};
-        case CHATLIST_ACTIONS.SELECT_ARCHIVED:
-            openedCategory = 'archivedChats';
-            return {...state, openedCategory};
         default:
-            return {...state, openedCategory};
+            return {...state};
     }
 };
 
