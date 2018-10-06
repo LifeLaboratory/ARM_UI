@@ -2,20 +2,6 @@ import React from 'react'
 import ChatListItem from "./ChatListItem";
 
 class ChatList extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {activeCategory: 'active', selectedChat: -1};
-    }﻿
-
-    changeCategory(name) {
-        console.log('changeCategory function');
-
-        this.setState({activeCategory: name});
-    };
-
-    selectChat(id) {
-        this.setState({selectedChat: id});
-    };
 
     render() {
         const activeChats = [
