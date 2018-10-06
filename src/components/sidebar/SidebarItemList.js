@@ -6,14 +6,13 @@ import PropTypes from 'prop-types';
 
 class SidebarItemList extends React.Component {
     render() {
-
         const {items} = this.props;
-        const itemsToRender = items.map((item, index) => {
-            switch (item.type) {
+        const itemsToRender = items.valueSeq().map((item, index) => {
+            switch (item.get('type')) {
                 case "linkItem":
-                    return <SidebarLinkItem key={index} description={item.description}/>;
+                    return <SidebarLinkItem key={index} description={item.get('description')}/>;
                 case "profileItem":
-                    return <SidebarProfileItem  key={index}  profileImgSrc={item.profileImgSrc} name={item.name}/>;
+                    return <SidebarProfileItem  key={index}  profileImgSrc={item.get('profileImgSrc')} name={item.get('name')}/>;
             }
         });
 
@@ -22,9 +21,8 @@ class SidebarItemList extends React.Component {
         )
     }
 }
-
 SidebarItemList.propTypes = {
-    items: PropTypes.array
+    items: PropTypes.instanceOf(Iterable)
 };
 
 export default SidebarItemList
