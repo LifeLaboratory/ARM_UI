@@ -5,8 +5,6 @@ class SidebarProfileItem extends React.Component {
     render() {
         const {profileImgSrc, name} = this.props;
 
-        console.log(this.props)
-
         return (
             <div className="operator-info">
                 <div className="operator-info__avatar-wrapper">
@@ -27,10 +25,12 @@ class SidebarProfileItem extends React.Component {
         )
     }
 }
+/*
 
 SidebarProfileItem.propTypes = {
     profileImgSrc: PropTypes.string,
     name: PropTypes.string
 };
+*/
 
 export default SidebarProfileItem

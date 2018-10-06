@@ -6,17 +6,19 @@ class SidebarItemsBlock extends React.Component {
 
     render() {
         const {items} = this.props;
-
         return (
             [<SidebarItemList key="itemList" items={items}/>,
                 <hr key="separator"/>]
         )
     }
 }
-
+/*
 SidebarItemsBlock.propTypes = {
-    id: PropTypes.string,
-    items: PropTypes.array
+    id: PropTypes.instanceOf(Iterable),
+    items: PropTypes.instanceOf(Iterable)
 };
+*/
+
+
 export default SidebarItemsBlock
 
