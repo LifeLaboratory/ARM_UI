@@ -21,9 +21,12 @@ class SidebarItemList extends React.Component {
         )
     }
 }
+
+/*
 SidebarItemList.propTypes = {
     items: PropTypes.instanceOf(Iterable)
 };
+*/
 
 export default SidebarItemList
 
