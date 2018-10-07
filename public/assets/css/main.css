@@ -394,6 +394,9 @@
   max-width: 700px;
   margin: 40px 0;
 }
+.scoreboard table {
+  border: 1px solid grey;
+}
 @font-face {
   font-family: "GTWalsheimPro";
   src: url(../fonts/GTWalsheimPro.otf) format("truetype");

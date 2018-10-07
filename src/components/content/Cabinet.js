@@ -1,27 +1,26 @@
 import React from 'react';
 import Chart from './Chart';
-
+import ScoreboardItem from './ScoreboardItem';
 
 class Cabinet extends React.Component {
     render() {
-        var barData = {
-            labels: ['first', 'second', 'spring'],
+        var pieData = {
+            labels: ['Открытые', 'Закрытые'],
             datasets: [{
                 label: ['Population'],
                 data: [
-                    1,
-                    2,
-                    3
+                    10,
+                    34
                 ],
                 backgroundColor: [
-                    'rgba(255, 199, 50, 0.5)',
-                    'rgba(55, 99, 132, 0.5)',
-                    'rgba(5, 99, 2, 1)'
+                    '#eb5a40',
+                    '#00B956'
+
                 ]
             }]
         };
 
-        var barOptions = {
+        var pieOptions = {
             title: {
                 display:true,
                 text: 'Количество клиентов в месяц'
@@ -34,9 +33,45 @@ class Cabinet extends React.Component {
 
         return (
             <div className="cabinet">
-                <Chart type="bar" data={barData} options={barOptions}/>
-                <Chart type="line" data={barData} options={barOptions}/>
-                <Chart type="pie" data={barData} options={barOptions}/>
+
+                <div className="cabinet__rating-container">
+                <div className="cabinet__title">Рейтинг оператора:</div>
+
+                <div className="cabinet__rating">3344</div>
+                </div>
+
+                <div className="scoreboard cabinet__scoreboard">
+                    <table>
+                        <tr>
+                            <td>Имя</td>
+                            <td>Рейтинг</td>
+                        </tr>
+                        <tr>
+                            <td>Инокентий Архипов</td>
+                            <td>5554</td>
+                        </tr>
+                        <tr>
+                            <td>Иван Василичъ</td>
+                            <td>3344</td>
+                        </tr>
+                        <tr>
+                            <td>Владислав Бойко</td>
+                            <td>2290</td>
+                        </tr>
+                        <tr>
+                            <td>Андрей Костин</td>
+                            <td>1560</td>
+                        </tr>
+                        <tr>
+                            <td>Артем Прудников</td>
+                            <td>1200</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div className="cabinet__graphic-container">
+                    <Chart type="pie" data={pieData} options={pieOptions}/>
+                </div>
             </div>
         )
     }
