@@ -4,6 +4,14 @@ export const switchAFK = () => {
     })
 };
 
+export const setProfile = (profile) => {
+    return ({
+        type: SIDEBAR_ACTIONS.SET_PROFILE,
+        profile
+    })
+};
+
 export const SIDEBAR_ACTIONS = {
+    SET_PROFILE: 'SET_PROFILE',
     SWITCH_AFK: 'SWITCH_AFK'
 };

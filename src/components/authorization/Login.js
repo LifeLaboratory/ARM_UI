@@ -26,25 +26,35 @@ class Login extends React.Component {
 
     handleSubmit(event, handlers) {
         event.preventDefault();
-        const {setSessionHandler, pushAuthError} = handlers;
+        const {setSession, pushAuthError} = handlers;
 
         ARMApi
             .login(this.credentials.username, this.credentials.password)
-            .then(result => setSessionHandler(result.Data.Session))
-            .catch(e => pushAuthError("asdasd"))
+            .then(result => {
+                return setSession(result.Data.Session)
+            })
+            .catch(e => {
+                return pushAuthError("error")
+            })
     }
 
     render() {
         const {handlers, auth} = this.props;
         const {registerLinkClickHandler} = handlers
         const {errorMsg} = auth;
-        const toRender = [<form className="authorization" onSubmit={e => this.handleSubmit(e, handlers)}>
+        const toRender = [];
+        let inputClassList = "authorization__field";
+
+        if (errorMsg) {
+            inputClassList += " warning";
+        }
+        return (<form className="authorization" onSubmit={e => this.handleSubmit(e, handlers)}>
             <div className="authorization__title">Авторизация</div>
 
-            <input className="authorization__field" type="text" placeholder="Login" onChange={(e) => {
+            <input className={inputClassList} type="text" placeholder="Login" onChange={(e) => {
                 this.handleLoginChange(e)
             }}/>
-            <input className="authorization__field" type="text" placeholder="Пароль" onChange={(e) => {
+            <input className={inputClassList} type="text" placeholder="Пароль" onChange={(e) => {
                 this.handlePasswordChange(e)
             }}/>
 
@@ -53,12 +63,7 @@ class Login extends React.Component {
                 registerLinkClickHandler(AUTH_STATE.REGISTER)
             }}>регистрация
             </div>
-        </form>];
-
-        if (errorMsg) {
-            toRender.push(<div>There was error while trying to login</div>)
-        }
-        return(toRender);
+        </form>);
 
     }
 

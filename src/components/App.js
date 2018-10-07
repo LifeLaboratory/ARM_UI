@@ -7,19 +7,14 @@ import Auth from "./authorization/Auth";
 
 class App extends React.Component {
 
-    componentDidMount() {
-    }
-
     render() {
-        const {auth, errorMsg, switchAuthState, setSession, pushAuthError} = this.props;
-        auth.errorMsg = errorMsg;
-
+        const {authState, session, errorMsg, switchAuthState, setSession, pushAuthError} = this.props;
+        const auth = {authState,session, errorMsg};
         const handlers = {
             switchAuthState,
             setSession,
             pushAuthError
         };
-
         if (!auth.session) {
             return <Auth auth={auth} handlers={handlers}/>
         }
