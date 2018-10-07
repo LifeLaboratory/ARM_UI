@@ -314,6 +314,13 @@
 .authorization__field:last-child {
   margin-bottom: 0;
 }
+.cabinet {
+  position: absolute;
+  background: #fff;
+  padding: 15px 0;
+  margin-left: 10px;
+  width: calc(100% - 270px);
+}
 @font-face {
   font-family: "GTWalsheimPro";
   src: url(../fonts/GTWalsheimPro.otf) format("truetype");
