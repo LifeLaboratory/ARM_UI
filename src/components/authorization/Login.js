@@ -54,7 +54,7 @@ class Login extends React.Component {
             <input className={inputClassList} type="text" placeholder="Login" onChange={(e) => {
                 this.handleLoginChange(e)
             }}/>
-            <input className={inputClassList} type="text" placeholder="Пароль *" onChange={(e) => {
+            <input className={inputClassList} type="password" placeholder="Пароль *" onChange={(e) => {
                 this.handlePasswordChange(e)
             }}/>
 

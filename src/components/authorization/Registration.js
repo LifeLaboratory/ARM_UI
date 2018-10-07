@@ -12,7 +12,7 @@ class Registration extends React.Component {
                 <input className="authorization__field" type="text" placeholder="Login"/>
                 <input className="authorization__field" type="text" placeholder="Имя"/>
                 <input className="authorization__field" type="text" placeholder="Пароль"/>
-                <input className="authorization__field" type="text" placeholder="Повторите пароль"/>
+                <input className="authorization__field" type="password" placeholder="Повторите пароль"/>
 
                 <button className="authorization__btn">Регистрация</button>
                 <div className="authorization__link" onClick={() => {
