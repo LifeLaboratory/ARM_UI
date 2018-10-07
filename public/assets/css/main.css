@@ -105,6 +105,10 @@
 }
 .chat__messages {
   padding: 10px 20px;
+  overflow-y: auto;
+}
+.chat__messages .scrollbar {
+  background-color: #f58234;
 }
 .chat__hints-container {
   padding-top: 10px;
