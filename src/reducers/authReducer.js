@@ -9,6 +9,7 @@ const initialState = {
 };
 
 export const authReducer = function (state = initialState, action) {
+
     const handleAuthError = (state, action) => {
         const {errorMsg} = action;
         const {auth} = state;
@@ -23,14 +24,13 @@ export const authReducer = function (state = initialState, action) {
         auth.errorMsg = null;
         return {...state, auth};
     };
+
     const handleSwitchAuthState = (state, action) => {
         const {desirableState} = action;
         const auth = {state};
         auth.authState = desirableState;
         return {...state, auth};
     };
-
-
     switch (action.type) {
         case AUTH_ACTIONS.SWITCH_AUTH_STATE:
             return handleSwitchAuthState(state, action);
@@ -41,5 +41,6 @@ export const authReducer = function (state = initialState, action) {
         default:
             return {...state};
     }
+
 };
 

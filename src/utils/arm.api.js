@@ -30,7 +30,7 @@ class ARMApi {
             .then(value => value.json())
             .then(value => {
                 if (value.Answer !== 'Success') {
-                    Promise.resolve(value);
+                   return Promise.reject(value);
                 }
                 return value;
             })
