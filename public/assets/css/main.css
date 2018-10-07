@@ -311,8 +311,18 @@
   width: 100%;
   font-family: "GTWalsheimPro", sans-serif;
 }
+.authorization__field.warning {
+  border-color: #eb5a40;
+}
 .authorization__field:last-child {
   margin-bottom: 0;
+}
+.cabinet {
+  position: absolute;
+  background: #fff;
+  padding: 15px 0;
+  margin-left: 10px;
+  width: calc(100% - 270px);
 }
 @font-face {
   font-family: "GTWalsheimPro";
