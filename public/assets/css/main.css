@@ -394,6 +394,55 @@
   max-width: 700px;
   margin: 40px 0;
 }
+.scoreboard {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+.scoreboard table {
+  border: solid #ccc 1px;
+  border-radius: 6px;
+  box-shadow: 0 1px 1px #ccc;
+  width: 500px;
+}
+.scoreboard tr:hover {
+  background: #fbf8e9;
+  transition: all 0.1s ease-in-out;
+}
+.scoreboard td,
+.scoreboard th {
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+.scoreboard th {
+  background-color: #dce9f9;
+  background-image: linear-gradient(top, #ebf3fc, #dce9f9);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  border-top: none;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.scoreboard td:first-child,
+.scoreboard th:first-child {
+  border-left: none;
+}
+.scoreboard th:first-child {
+  border-radius: 6px 0 0 0;
+}
+.scoreboard th:last-child {
+  border-radius: 0 6px 0 0;
+}
+.scoreboard th:only-child {
+  border-radius: 6px 6px 0 0;
+}
+.scoreboard tr:last-child td:first-child {
+  border-radius: 0 0 0 6px;
+}
+.scoreboard tr:last-child td:last-child {
+  border-radius: 0 0 6px 0;
+}
 @font-face {
   font-family: "GTWalsheimPro";
   src: url(../fonts/GTWalsheimPro.otf) format("truetype");

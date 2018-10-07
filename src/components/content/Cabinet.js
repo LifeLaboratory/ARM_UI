@@ -21,7 +21,23 @@ class Cabinet extends React.Component {
             }]
         };
 
-        var barOptions = {
+        var pieData = {
+            labels: ['Открытые', 'Закрытые'],
+            datasets: [{
+                label: ['Population'],
+                data: [
+                    10,
+                    34
+                ],
+                backgroundColor: [
+                    '#eb5a40',
+                    '#00B956'
+
+                ]
+            }]
+        };
+
+        var pieOptions = {
             title: {
                 display:true,
                 text: 'Количество клиентов в месяц'
@@ -31,12 +47,46 @@ class Cabinet extends React.Component {
                 position: 'right'
             }
         };
+        var barOptions = {
+            title: {
+                display:true,
+                text: 'Статистика заявок'
+            },
+            legend: {
+                display: true,
+                position: 'right'
+            }
+        };
 
         return (
             <div className="cabinet">
-                <Chart type="bar" data={barData} options={barOptions}/>
-                <Chart type="line" data={barData} options={barOptions}/>
-                <Chart type="pie" data={barData} options={barOptions}/>
+
+                <div className="cabinet__rating-container">
+                <div className="cabinet__title">Рейтинг оператора:</div>
+
+                <div className="cabinet__rating">3344</div>
+                </div>
+
+                <div className="scoreboard cabinet__scoreboard">
+                    <table>
+                        <tr>
+                            <td>Имя</td>
+                            <td>Рейтинг</td>
+                        </tr>
+                        <tr>
+                            <td>Иван</td>
+                            <td>1553</td>
+                        </tr>
+                        <tr>
+                            <td>Кирил</td>
+                            <td>5555</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div className="cabinet__graphic-container">
+                    <Chart type="pie" data={pieData} options={pieOptions}/>
+                </div>
             </div>
         )
     }

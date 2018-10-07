@@ -24,6 +24,8 @@ class Chart extends React.Component {
         if (this.props.type === 'bar') {
             return (
                 <Bar
+                    width="400"
+                    height="400"
                     data={this.props.data}
                     options={this.props.options}
                 />
