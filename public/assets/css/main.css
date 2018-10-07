@@ -204,6 +204,9 @@
   background: #F2F2F2;
   cursor: pointer;
 }
+.chat-hint__text {
+  max-width: 95%;
+}
 .chat-hint__buttons-container {
   width: 35px;
   display: -ms-flexbox;
@@ -374,6 +377,22 @@
   padding: 15px 0;
   margin-left: 10px;
   width: calc(100% - 270px);
+  font-family: "GTWalsheimPro", sans-serif;
+}
+.cabinet__title {
+  font-size: 32px;
+  text-align: center;
+}
+.cabinet__rating {
+  font-size: 122px;
+  text-align: center;
+}
+.cabinet__rating-container {
+  margin: 10px 0 50px;
+}
+.cabinet__graphic-container {
+  max-width: 700px;
+  margin: 40px 0;
 }
 @font-face {
   font-family: "GTWalsheimPro";
