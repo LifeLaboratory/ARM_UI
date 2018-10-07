@@ -4,13 +4,11 @@ import ChatForm from "./ChatForm";
 
 class Chat extends React.Component {
     render() {
-        const {dialog} = this.props;
+        const {messages, hints} = this.props;
 
-        if (!dialog) {
+        if (!messages) {
             return [];
         }
-
-        const {messages, hints} = dialog;
         return (
             <div className="chat">
                 <ChatMessages messages={messages}/>

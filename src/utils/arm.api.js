@@ -39,8 +39,20 @@ class ARMApi {
         return this.fetchAPIGet(ARMApi.AUTH_URL, ARMApi.jsonToGetParams({Session: session}));
     }
 
-    static getChats(session) {
-        return this.fetchAPIGet(ARMApi.CHAT_URL, ARMApi.jsonToGetParams({Session: session}))
+    static getChats(session, archived) {
+        const params = {Session: session};
+
+        if (archived) {
+            params.Archive = 1;
+        }
+
+        return this.fetchAPIGet(ARMApi.CHAT_URL, ARMApi.jsonToGetParams(params))
+    }
+
+    static getDialog(session, chatId) {
+        const params = {Session: session, id_chat: chatId};
+
+        return this.fetchAPIGet(ARMApi.CHAT_URL, ARMApi.jsonToGetParams(params))
     }
 
     static fetchAPIGet(url, params) {

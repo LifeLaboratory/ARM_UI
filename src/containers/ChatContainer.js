@@ -8,15 +8,7 @@ const mapStateToProps = state => {
     const {hints, messages} = chatReducer;
     const {selectedId} = chatListReducer;
     const props = {};
-    if (selectedId && chats && chats.some(chat => chat.id === selectedId) && messages.some(message => message.chatId === selectedId)) {
-        const filteredMessages = messages.filter(message => message.chatId === selectedId);
-        props.dialog = {
-            selectedId,
-            messages: filteredMessages,
-            hints
-        }
-    }
-    return props;
+    return {messages, hints};
 };
 
 const mapDispatchToProps = dispatch => ({});
