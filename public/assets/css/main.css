@@ -311,6 +311,9 @@
   width: 100%;
   font-family: "GTWalsheimPro", sans-serif;
 }
+.authorization__field.warning {
+  border-color: #eb5a40;
+}
 .authorization__field:last-child {
   margin-bottom: 0;
 }
