@@ -1,25 +1,9 @@
 import React from 'react';
 import Chart from './Chart';
-
+import ScoreboardItem from './ScoreboardItem';
 
 class Cabinet extends React.Component {
     render() {
-        var barData = {
-            labels: ['first', 'second', 'spring'],
-            datasets: [{
-                label: ['Population'],
-                data: [
-                    1,
-                    2,
-                    3
-                ],
-                backgroundColor: [
-                    'rgba(255, 199, 50, 0.5)',
-                    'rgba(55, 99, 132, 0.5)',
-                    'rgba(5, 99, 2, 1)'
-                ]
-            }]
-        };
 
         var pieData = {
             labels: ['Открытые', 'Закрытые'],
@@ -47,16 +31,7 @@ class Cabinet extends React.Component {
                 position: 'right'
             }
         };
-        var barOptions = {
-            title: {
-                display:true,
-                text: 'Статистика заявок'
-            },
-            legend: {
-                display: true,
-                position: 'right'
-            }
-        };
+
 
         return (
             <div className="cabinet">
@@ -74,12 +49,24 @@ class Cabinet extends React.Component {
                             <td>Рейтинг</td>
                         </tr>
                         <tr>
-                            <td>Иван</td>
-                            <td>1553</td>
+                            <td>Инокентий Архипов</td>
+                            <td>5554</td>
                         </tr>
                         <tr>
-                            <td>Кирил</td>
-                            <td>5555</td>
+                            <td>Иван Василичъ</td>
+                            <td>3344</td>
+                        </tr>
+                        <tr>
+                            <td>Владислав Бойко</td>
+                            <td>2290</td>
+                        </tr>
+                        <tr>
+                            <td>Андрей Костин</td>
+                            <td>1560</td>
+                        </tr>
+                        <tr>
+                            <td>Артем Прудников</td>
+                            <td>1200</td>
                         </tr>
                     </table>
                 </div>
