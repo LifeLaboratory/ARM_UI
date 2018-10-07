@@ -1,7 +1,7 @@
-export const login = credentials => {
+export const setSession = session => {
     return ({
-        type: AUTH_ACTIONS.LOGIN,
-        credentials
+        type: AUTH_ACTIONS.SET_SESSION,
+        session
     })
 };
 
@@ -12,9 +12,8 @@ export const switchAuthState = desirableState => {
     })
 };
 
-
 export const AUTH_ACTIONS = {
-    LOGIN: 'LOGIN',
+    SET_SESSION: 'SET_SESSION',
     SWITCH_AUTH_STATE: 'SWITCH_AUTH_STATE',
 };
 

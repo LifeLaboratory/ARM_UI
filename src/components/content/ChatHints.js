@@ -6,7 +6,7 @@ class ChatHints extends React.Component {
         const {hints} = this.props;
         return (
             <div className="chat__hints-container">
-                {hints.map(hint => <ChatHint text={hint}/>  )}
+                {hints.map((hint, index) => <ChatHint text={hint} key={index}/>)}
             </div>
         )
     }

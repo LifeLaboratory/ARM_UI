@@ -14,6 +14,11 @@ export const authReducer = function (state = initialState, action) {
             const newState = {...state};
             newState.auth.authState = desirableState;
             return newState;
+        case AUTH_ACTIONS.SET_SESSION:
+            const {session} = action;
+            const {auth} = state;
+            auth.session = session;
+            return {...state, auth:auth};
         default:
             return {...state};
     }

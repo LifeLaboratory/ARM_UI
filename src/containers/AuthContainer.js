@@ -1,8 +1,6 @@
 import {connect} from 'react-redux'
-import Chat from "../components/content/Chat";
 import Auth from "../components/authorization/Auth";
-import {switchAuthState} from "../actions/authActions";
-import {selectOpened} from "../actions/chatListActions";
+import {setSession, switchAuthState} from "../actions/authActions";
 
 const mapStateToProps = state => {
     const {authReducer} = state;
@@ -12,7 +10,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    switchAuthState: (desirableState) => dispatch(switchAuthState(desirableState))
+    switchAuthState: (desirableState) => dispatch(switchAuthState(desirableState)),
+    setSession: (session) => dispatch(setSession(session))
 });
 
 export default connect(

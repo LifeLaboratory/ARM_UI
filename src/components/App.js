@@ -2,7 +2,7 @@ import React from 'react'
 
 import SidebarContainer from '../containers/SidebarContainer'
 import ContentContainer from "../containers/ContentContainer";
-import AuthContainer from "../containers/AuthContainer";
+import Auth from "./authorization/Auth";
 
 
 class App extends React.Component {
@@ -12,11 +12,14 @@ class App extends React.Component {
 
     render() {
         console.log(this.props);
-        const {auth} = this.props;
+        const {session, authState, switchAuthState, setSession} = this.props;
         const toRender = [];
 
-        if (!auth || !auth.session) {
-            return <AuthContainer/>
+        if (!session) {
+            /*
+                        return <AuthContainer/>
+            */
+            return <Auth session={session} authState={authState} switchAuthState={switchAuthState} setSession={setSession}/>
         }
 
         return (

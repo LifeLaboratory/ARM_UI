@@ -6,7 +6,7 @@ class Registration extends React.Component {
         const {registerLinkClickHandler} = this.props;
 
         return (
-            <form className="authorization" action="">
+            <form className="authorization" onSubmit={(e)=> e.preventDefault()}>
                 <div className="authorization__title">Регистрация</div>
 
                 <input className="authorization__field" type="text" placeholder="Login"/>
@@ -15,7 +15,10 @@ class Registration extends React.Component {
                 <input className="authorization__field" type="text" placeholder="Повторите пароль"/>
 
                 <button className="authorization__btn">Регистрация</button>
-                <div className="authorization__link" onClick={() => {registerLinkClickHandler(AUTH_STATE.LOGIN)}}>Уже есть аккаунт</div>
+                <div className="authorization__link" onClick={() => {
+                    registerLinkClickHandler(AUTH_STATE.LOGIN)
+                }}>Уже есть аккаунт
+                </div>
 
             </form>
         )
