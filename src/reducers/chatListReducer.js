@@ -46,26 +46,23 @@ const archiveChats = [
 const initialState = {
     selectedId: null,
     openedCategory: 'activeChats',
-    activeChats: {
-        chats: activeChats
-    },
-    archivedChats: {
-        chats: archiveChats
-    }
+    activeChats: activeChats,
+    archivedChats: archiveChats
 };
 
 export const chatListReducer = function (state = initialState, action) {
     let openedCategory = 'activeChats';
     switch (action.type) {
-        case CHATLIST_ACTIONS.OPEN_CHAT:
-            const selectedId = parseInt(action.chatId);
-            return {...state, selectedId};
         case CHATLIST_ACTIONS.SELECT_OPENED:
             openedCategory = 'activeChats';
             return {...state, openedCategory};
         case CHATLIST_ACTIONS.SELECT_ARCHIVED:
             openedCategory = 'archivedChats';
             return {...state, openedCategory};
+        case CHATLIST_ACTIONS.SET_ACTIVE_CHATS:
+            return {...state, activeChats: action.chats};
+        case CHATLIST_ACTIONS.SET_ARCHIVED_CHATS:
+            return {...state, archivedChats: action.chats};
         default:
             return {...state, openedCategory};
     }

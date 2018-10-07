@@ -5,7 +5,6 @@ class ChatMessages extends React.Component {
     render() {
 
         const {messages} = this.props;
-
         return (
            <div className="chat__messages">
                {messages.map(message => {

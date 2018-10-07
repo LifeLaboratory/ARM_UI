@@ -1,12 +1,34 @@
 import React from 'react'
 import ChatListItem from "./ChatListItem";
 import ChatCategoryButton from "./ChatCategoryButton";
+import ARMApi from "../../utils/arm.api";
 
 class ChatList extends React.Component {
 
+    componentDidMount() {
+        const {session, setActiveChats, setArchivedChats} = this.props;
+        ARMApi.getChats(session)
+            .then(result => {
+                console.log(result);
+                const respChats = result.Data;
+                const chats = respChats.map(respChat => {
+                    return {
+                        id: respChat.id_chat,
+                        name: respChat.Name,
+                        date: respChat.Data.substring(0, 10),
+                        text: respChat.Text
+                    }
+                });
+                setActiveChats(chats);
+            })
+            .catch(err => {
+                console.error(err);
+            })
+    }
+
     render() {
 
-        const {chats, openChat, selectedId, selectOpened, selectArchived, openedCategory} = this.props;
+        const {session, chats, openChat, selectedId, selectOpened, selectArchived, openedCategory} = this.props;
 
         return (
             <div className="chat-list">
@@ -26,8 +48,8 @@ class ChatList extends React.Component {
                                 date={chat.date}
                                 text={chat.text}
                                 clickHandler={openChat}
-                                selected={selectedId === chat.id}
-                            />
+                                session={session}
+                                selected={selectedId === chat.id}/>
                         )
                     })
                 }

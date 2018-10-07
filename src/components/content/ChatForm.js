@@ -4,11 +4,11 @@ import ChatInput from "./ChatInput";
 
 class ChatForm extends React.Component {
     render() {
-        const {hints} = this.props;
+        const {hints,selectedId} = this.props;
         return (
             <div className="chat__form-container">
                 <ChatHints hints={hints}/>
-                <ChatInput/>
+                <ChatInput selectedId={selectedId}/>
             </div>
         )
     }
