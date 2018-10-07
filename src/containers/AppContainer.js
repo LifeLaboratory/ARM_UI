@@ -5,8 +5,8 @@ import {pushAuthError, setSession, switchAuthState} from "../actions/authActions
 const mapStateToProps = state => {
     const {authReducer} = state;
     const {auth} = authReducer;
-    const {errorMsg} = auth;
-    return {auth, errorMsg}
+    const {session, errorMsg, authState} = auth;
+    return {session, errorMsg, authState}
 };
 
 const mapDispatchToProps = dispatch => ({

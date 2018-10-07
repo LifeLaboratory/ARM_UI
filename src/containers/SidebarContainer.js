@@ -2,13 +2,14 @@ import {connect} from 'react-redux'
 import Sidebar from '../components/sidebar/Sidebar'
 import {SidebarConfiguration} from "../constants/SidebarConfiguration";
 import {fromJS} from 'immutable';
-import {switchAFK} from "../actions/sideBarActions";
+import {setProfile, switchAFK} from "../actions/sideBarActions";
 import {selectOpened} from "../actions/chatListActions";
 
 const mapStateToProps = state => {
-    const {sidebarReducer} = state;
+    const {sidebarReducer, authReducer} = state;
     const profileData = sidebarReducer.get('profile');
     const blocks = fromJS(SidebarConfiguration.blocks);
+    const {session} = authReducer.auth;
 
     const mappedBlocks = blocks.map((block, index) => {
         const items = block.get('items');
@@ -22,11 +23,12 @@ const mapStateToProps = state => {
             return item;
         }));
     });
-    return {blocks: mappedBlocks}
+    return {blocks: mappedBlocks, session:session}
 };
 
 const mapDispatchToProps = dispatch => ({
-    onSwitchAfk: () => dispatch(switchAFK())
+    onSwitchAfk: () => dispatch(switchAFK()),
+    setProfile: (profile) => dispatch(setProfile(profile))
 });
 
 export default connect(

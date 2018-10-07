@@ -1,5 +1,4 @@
 import {fromJS} from 'immutable';
-import {MockProfileData} from "../mockData/mockProfile";
 import {SIDEBAR_ACTION, SIDEBAR_ACTIONS} from "../actions/sideBarActions";
 
 const raw = {
@@ -31,11 +30,17 @@ export const sidebarReducer = function (state = initialState, action) {
                 return profile
                     .set('afk', !profile.get('afk'))
             });
+        case SIDEBAR_ACTIONS.SET_PROFILE:
+            const newProfile  = action.profile;
+            return state.updateIn(['profile'], (profile) => {
+                return profile
+                    .set('name', newProfile.name)
+            });
         default:
             return state.updateIn(['profile'], (profile) => {
                 return profile
-                    .set('profileImgSrc', MockProfileData.profileImgSrc)
-                    .set('name', MockProfileData.name);
+                    .set('profileImgSrc', "http://www.master-hard.com/wp-content/uploads/2008/08/avatar-thumb.jpg")
+                    .set('name', '');
             });
     }
 
