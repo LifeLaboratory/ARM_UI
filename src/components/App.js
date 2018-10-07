@@ -15,10 +15,10 @@ class App extends React.Component {
             setSession,
             pushAuthError
         };
-        /*
+
         if (!auth.session) {
             return <Auth auth={auth} handlers={handlers}/>
-        }*/
+        }
 
         return (
             <div>

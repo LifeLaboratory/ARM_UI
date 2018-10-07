@@ -3,8 +3,11 @@ class ARMApi {
     static API_URL = "http://90.189.132.25/";
     static AUTH_PREFIX = "api/v1/auth";
     static CHAT_PREFIX = "api/v1/chat";
+    static CLASSIFICATION_PREFIX = "api/v1/classificator";
     static AUTH_URL = ARMApi.API_URL + ARMApi.AUTH_PREFIX;
     static CHAT_URL = ARMApi.API_URL + ARMApi.CHAT_PREFIX;
+    static CLASSIFICATION_URL = ARMApi.API_URL + ARMApi.CLASSIFICATION_PREFIX;
+
     static fetchHeaders = {
         'Accept': '*/*',
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -55,6 +58,18 @@ class ARMApi {
         return this.fetchAPIGet(ARMApi.CHAT_URL, ARMApi.jsonToGetParams(params))
     }
 
+    static getHints(message) {
+        const params = {Message: message};
+
+        return this.fetchAPIPost(ARMApi.CLASSIFICATION_URL, params);
+    }
+
+    static sendMessage(chatId, message) {
+        const params = {id_client: chatId, Message: message};
+
+        return this.fetchAPIPost(ARMApi.CHAT_URL, params);
+    }
+
     static fetchAPIGet(url, params) {
         return fetch(url + params, {
             headers: ARMApi.fetchHeaders,
@@ -77,6 +92,10 @@ class ARMApi {
         })
             .then(value => value.json())
             .then(value => {
+                if(typeof value === 'string') {
+                    return Promise.resolve(JSON.parse(value));
+                }
+
                 if (value.Answer !== 'Success') {
                     return Promise.reject(value);
                 }

@@ -1,17 +1,19 @@
 import {connect} from 'react-redux'
 import Chat from "../components/content/Chat";
+import {setHints} from "../actions/chatActions";
 
 const mapStateToProps = state => {
     const {chatListReducer} = state;
     const {chatReducer} = state;
     const {chats} = chatListReducer[chatListReducer.openedCategory];
     const {hints, messages} = chatReducer;
-    const {selectedId} = chatListReducer;
-    const props = {};
-    return {messages, hints};
+    const {selectedId} = chatReducer;
+    return {messages, hints, selectedId};
 };
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+    setHints: (hints) => dispatch(setHints(hints))
+});
 
 export default connect(
     mapStateToProps,

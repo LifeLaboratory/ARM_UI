@@ -25,13 +25,7 @@ class ChatList extends React.Component {
                 console.error(err);
             })
     }
-/*
-*
-*
-* Data: "2018-10-06 10:55:13.402839"
-Text: null
-id_chat: "vk|18570334"
-id_client: "vk|18570334"*/
+
     render() {
 
         const {session, chats, openChat, selectedId, selectOpened, selectArchived, openedCategory} = this.props;

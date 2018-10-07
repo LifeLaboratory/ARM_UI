@@ -2,11 +2,7 @@ import {CHAT_ACTIONS} from "../actions/chatActions";
 
 const messages = null;
 
-const hints = [
-    'Вы пробовали выключить и снова включить?',
-    'Как давно наблюдается проблема?',
-    'Может просто так оставим?'
-];
+const hints = [];
 
 const initialState = {
     messages,
@@ -14,7 +10,12 @@ const initialState = {
 };
 
 export const chatReducer = function (state = initialState, action) {
+    debugger
+
     switch (action.type) {
+        case CHAT_ACTIONS.SET_HINTS:
+            const {hints} = action;
+            return {...state, hints};
         case CHAT_ACTIONS.OPEN_CHAT:
             const selectedId = action.chatId;
             const messages = action.messages;

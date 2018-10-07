@@ -3,7 +3,10 @@ import ChatHint from "./ChatHint";
 
 class ChatHints extends React.Component {
     render() {
-        const {hints} = this.props;
+        let {hints} = this.props;
+        if(!hints) {
+            hints = [];
+        }
         return (
             <div className="chat__hints-container">
                 {hints.map((hint, index) => <ChatHint text={hint} key={index}/>)}

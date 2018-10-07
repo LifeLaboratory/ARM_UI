@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => ({
     selectOpened: () => dispatch(selectOpened()),
     selectArchived: () => dispatch(selectArchived()),
     setArchivedChats: (chats) => dispatch(setArchivedChats(chats)),
-    setActiveChats: (chats) => dispatch(setActiveChats(chats))
+    setActiveChats: (chats) => dispatch(setActiveChats(chats)),
 });
 
 export default connect(
