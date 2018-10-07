@@ -3,7 +3,7 @@ import {CHATLIST_ACTIONS} from "../actions/chatListActions";
 const activeChats = [
     {
         id: 1,
-        name: 'Иван Василичъ',
+        name: 'Иван Петров',
         date: '06.10.2018',
         text: 'Я не устанавливал этот тариф'
     },
@@ -11,7 +11,7 @@ const activeChats = [
         id: 2,
         name: 'Петров Сергей',
         date: '06.10.2018',
-        text: 'Вопрос на счёт подписок!',
+        text: 'Не беспокойтесь, сейчас все решим!',
     },
     {
         id: 3,
@@ -55,12 +55,11 @@ const initialState = {
 };
 
 export const chatListReducer = function (state = initialState, action) {
-    let openedCategory = 'activeChats'
+    let openedCategory = 'activeChats';
     switch (action.type) {
         case CHATLIST_ACTIONS.OPEN_CHAT:
             const selectedId = parseInt(action.chatId);
-            const asd =  {...state, selectedId};
-            return asd;
+            return {...state, selectedId};
         case CHATLIST_ACTIONS.SELECT_OPENED:
             openedCategory = 'activeChats';
             return {...state, openedCategory};

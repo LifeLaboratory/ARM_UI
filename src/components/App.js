@@ -11,15 +11,17 @@ class App extends React.Component {
     }
 
     render() {
-        console.log(this.props);
-        const {session, authState, switchAuthState, setSession} = this.props;
-        const toRender = [];
+        const {auth, errorMsg, switchAuthState, setSession, pushAuthError} = this.props;
+        auth.errorMsg = errorMsg;
 
-        if (!session) {
-            /*
-                        return <AuthContainer/>
-            */
-            return <Auth session={session} authState={authState} switchAuthState={switchAuthState} setSession={setSession}/>
+        const handlers = {
+            switchAuthState,
+            setSession,
+            pushAuthError
+        };
+
+        if (!auth.session) {
+            return <Auth auth={auth} handlers={handlers}/>
         }
 
         return (

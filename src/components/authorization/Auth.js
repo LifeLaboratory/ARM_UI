@@ -5,16 +5,15 @@ import {AUTH_STATE} from "../../actions/authActions";
 
 class Auth extends React.Component {
     render() {
-        const {session, authState} = this.props;
-        const {switchAuthState, setSession} = this.props;
+        const {auth, handlers} = this.props;
+        const {session, authState} = auth;
+        const {switchAuthState, setSession} = handlers;
         const toRender = [];
 
         if (authState === AUTH_STATE.LOGIN) {
-            toRender.push(<Login key={authState} setSessionHandler={setSession}
-                                 registerLinkClickHandler={switchAuthState}/>)
+            toRender.push(<Login key={authState} auth={auth} handlers={handlers}/>)
         } else if (authState === AUTH_STATE.REGISTER) {
-            toRender.push(<Registration key={authState} setSessionHandler={setSession}
-                                        registerLinkClickHandler={switchAuthState}/>)
+            toRender.push(<Registration key={authState} auth={auth} handlers={handlers} />)
         }
 
         return (toRender)

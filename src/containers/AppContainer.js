@@ -1,17 +1,18 @@
 import {connect} from 'react-redux'
 import App from "../components/App";
-import {setSession, switchAuthState} from "../actions/authActions";
+import {pushAuthError, setSession, switchAuthState} from "../actions/authActions";
 
 const mapStateToProps = state => {
     const {authReducer} = state;
     const {auth} = authReducer;
-    const {session, authState} = auth;
-    return {session, authState}
+    const {errorMsg} = auth;
+    return {auth, errorMsg}
 };
 
 const mapDispatchToProps = dispatch => ({
     switchAuthState: (desirableState) => dispatch(switchAuthState(desirableState)),
-    setSession: (session) => dispatch(setSession(session))
+    setSession: (session) => dispatch(setSession(session)),
+    pushAuthError: (errorMsg) => dispatch(pushAuthError(errorMsg))
 });
 
 export default connect(
