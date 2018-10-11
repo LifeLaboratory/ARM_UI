@@ -1,0 +1,39 @@
+@import "mixins";
+@import "sidebar";
+@import "operator-info";
+@import "chat";
+@import "chat-hint";
+@import "chat-message";
+@import "chat-list";
+@import "chat-list-item";
+@import "authorization";
+@import "cabinet";
+@import "scoreboard";
+
+@font-face {
+  font-family: "GTWalsheimPro";
+  src: url(../fonts/GTWalsheimPro.otf) format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ededed;
+}
+
+.disabled-block {
+  display: none;
+}
+
+.content-container {
+  padding-left: 260px;
+  padding-right: 10px;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+}

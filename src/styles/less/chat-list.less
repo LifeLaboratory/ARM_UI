@@ -1,0 +1,37 @@
+@import "mixins";
+
+.chat-list {
+  max-width: 250px;
+  font-family: @mainFont;
+  background: #fff;
+
+  &__category-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    background: #fff;
+    padding: 10px 10px;
+    border-bottom: 1px solid @border-color;
+  }
+
+  &__category {
+    margin-right: 7px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.active {
+      text-decoration: underline;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__item {
+    margin-bottom: 10px;
+  }
+}

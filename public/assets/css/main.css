@@ -1,0 +1,423 @@
+.sidebar {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  font-family: "GTWalsheimPro", sans-serif;
+  background: #fff;
+}
+.sidebar hr {
+  height: 5px;
+  border: none;
+  background: #D8D8D8;
+}
+.sidebar hr:last-child {
+  display: none;
+}
+.sidebar__operator-info {
+  border-bottom: 4px solid #D8D8D8;
+}
+.sidebar__item {
+  border-bottom: 1px solid #D8D8D8;
+  background: #fff;
+  color: #323232;
+}
+.sidebar__items-list {
+  background: #fff;
+  margin-top: 4px;
+}
+.sidebar__item {
+  display: block;
+  padding: 8px 15px;
+  border-bottom: 1px solid #D8D8D8;
+  cursor: pointer;
+  text-decoration: none;
+}
+.sidebar__item:hover {
+  background: #F2F2F2;
+  text-decoration: none;
+}
+.operator-info {
+  background: #fff;
+  padding-top: 20px;
+}
+.operator-info__avatar-wrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 8px;
+}
+.operator-info__avatar-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+  height: 100%;
+}
+.operator-info__name {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.operator-info__link,
+.operator-info__status {
+  padding: 8px 15px;
+  border-bottom: 1px solid #D8D8D8;
+  cursor: pointer;
+}
+.operator-info__link:hover,
+.operator-info__status:hover {
+  background: #F2F2F2;
+}
+.operator-info__status {
+  position: relative;
+}
+.operator-info__status:after {
+  content: '';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  border-radius: 50%;
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #00B956;
+}
+.operator-info__status.afk:after {
+  background: #eb5a40;
+}
+.chat {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  width: 100%;
+  padding: 15px 0;
+  background: #fff;
+  margin-left: 10px;
+}
+.chat__messages {
+  padding: 10px 20px;
+  overflow-y: auto;
+}
+.chat__messages::-webkit-scrollbar {
+  width: 7px;
+  height: 3px;
+  padding-right: 2px;
+}
+.chat__messages::-webkit-scrollbar-button {
+  background-color: #fff;
+}
+.chat__messages::-webkit-scrollbar-track {
+  background-color: #999;
+}
+.chat__messages::-webkit-scrollbar-track-piece {
+  background-color: #ffffff;
+}
+.chat__messages::-webkit-scrollbar-thumb {
+  height: 35px;
+  background-color: #00b956;
+  border-radius: 7px;
+}
+.chat__messages::-webkit-scrollbar-corner {
+  background-color: #999;
+}
+.chat__messages::-webkit-resizer {
+  background-color: #666;
+}
+.chat__hints-container {
+  padding-top: 10px;
+  max-height: 200px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  overflow-y: auto;
+}
+.chat__hints-container::-webkit-scrollbar {
+  width: 7px;
+  height: 3px;
+  padding-right: 2px;
+}
+.chat__hints-container::-webkit-scrollbar-button {
+  background-color: #fff;
+}
+.chat__hints-container::-webkit-scrollbar-track {
+  background-color: #999;
+}
+.chat__hints-container::-webkit-scrollbar-track-piece {
+  background-color: #ffffff;
+}
+.chat__hints-container::-webkit-scrollbar-thumb {
+  height: 35px;
+  background-color: #00b956;
+  border-radius: 7px;
+}
+.chat__hints-container::-webkit-scrollbar-corner {
+  background-color: #999;
+}
+.chat__hints-container::-webkit-resizer {
+  background-color: #666;
+}
+.chat__message-form {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  padding: 10px 20px 0;
+  border-top: 1px solid #D8D8D8;
+}
+.chat__message-field {
+  width: 100%;
+  margin-right: 10px;
+  padding: 10px 15px;
+}
+.chat__send-btn {
+  font-family: "GTWalsheimPro", sans-serif;
+  height: 30px;
+  width: 120px;
+  text-align: center;
+  background: #00b956;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  padding-bottom: 3px;
+  font-size: 14px;
+  border: none;
+}
+.chat-hint {
+  padding: 10px 20px;
+  border-top: 1px solid #D8D8D8;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  font-family: "GTWalsheimPro", sans-serif;
+}
+.chat-hint:hover {
+  background: #F2F2F2;
+  cursor: pointer;
+}
+.chat-hint__text {
+  max-width: 95%;
+}
+.chat-hint__buttons-container {
+  width: 35px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+.chat-hint__approve-btn,
+.chat-hint__reject-btn {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.chat-hint__reject-btn {
+  background: #eb5a40;
+}
+.chat-hint__buttons-container {
+  display: -ms-flexbox;
+  display: flex;
+}
+.chat-message {
+  max-width: 80%;
+  background-color: #f2f2f2;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  position: relative;
+  font-family: "GTWalsheimPro", sans-serif;
+}
+.chat-message:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  bottom: 0;
+  left: -8px;
+  border-width: 0 0 10px 8px;
+  border-color: transparent transparent #f2f2f2 transparent;
+}
+.chat-message.sent {
+  margin-left: 20%;
+}
+.chat-message.sent:before {
+  border-width: 0 8px 10px 0;
+  left: auto;
+  right: -8px;
+}
+.chat-list {
+  max-width: 250px;
+  font-family: "GTWalsheimPro", sans-serif;
+  background: #fff;
+}
+.chat-list__category-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  margin-bottom: 10px;
+  background: #fff;
+  padding: 10px 10px;
+  border-bottom: 1px solid #D8D8D8;
+}
+.chat-list__category {
+  margin-right: 7px;
+  cursor: pointer;
+}
+.chat-list__category:hover {
+  text-decoration: underline;
+}
+.chat-list__category.active {
+  text-decoration: underline;
+}
+.chat-list__category:last-child {
+  margin-right: 0;
+}
+.chat-list__item {
+  margin-bottom: 10px;
+}
+.chat-list-item {
+  background: #fff;
+  font-family: "GTWalsheimPro", sans-serif;
+  padding: 5px 0;
+  transition: box-shadow 0.1s ease-out;
+  border-top: 1px solid #D8D8D8;
+  border-bottom: 1px solid #D8D8D8;
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 0;
+}
+.chat-list-item.active {
+  background: #00b956;
+  color: #fff;
+}
+.chat-list-item:hover {
+  cursor: pointer;
+  box-shadow: 0 1px 7px 3px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.chat-list-item__head {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding: 10px 20px;
+}
+.chat-list-item__date {
+  font-size: 12px;
+}
+.chat-list-item__last-message {
+  padding: 10px 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.authorization {
+  background: #fff;
+  width: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-family: "GTWalsheimPro", sans-serif;
+}
+.authorization__title {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.authorization__link {
+  text-align: right;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.authorization__btn {
+  width: 100%;
+  background: #00B956;
+  border: none;
+  height: 30px;
+  border-radius: 30px;
+  color: #fff;
+  font-family: "GTWalsheimPro", sans-serif;
+  line-height: 26px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+.authorization__field {
+  padding: 5px 20px 9px;
+  border: 1px solid #D8D8D8;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: "GTWalsheimPro", sans-serif;
+}
+.authorization__field.warning {
+  border-color: #eb5a40;
+}
+.authorization__field:last-child {
+  margin-bottom: 0;
+}
+.cabinet {
+  position: absolute;
+  background: #fff;
+  padding: 15px 0;
+  margin-left: 10px;
+  width: calc(100% - 270px);
+  font-family: "GTWalsheimPro", sans-serif;
+}
+.cabinet__title {
+  font-size: 32px;
+  text-align: center;
+}
+.cabinet__rating {
+  font-size: 122px;
+  text-align: center;
+}
+.cabinet__rating-container {
+  margin: 10px 0 50px;
+}
+.cabinet__graphic-container {
+  max-width: 700px;
+  margin: 40px 0;
+}
+.scoreboard table {
+  border: 1px solid grey;
+}
+@font-face {
+  font-family: "GTWalsheimPro";
+  src: url(../fonts/GTWalsheimPro.otf) format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #ededed;
+}
+.disabled-block {
+  display: none;
+}
+.content-container {
+  padding-left: 260px;
+  padding-right: 10px;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+}

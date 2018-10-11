@@ -1,0 +1,40 @@
+@import "mixins";
+
+.chat-hint {
+  padding: 10px 20px;
+  border-top: 1px solid @border-color;
+  display: flex;
+  justify-content: space-between;
+  font-family: @mainFont;
+
+  &:hover {
+    background: #F2F2F2;
+    cursor: pointer;
+  }
+
+  &__text {
+    max-width: 95%;
+  }
+
+  &__buttons-container {
+    width: 35px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__approve-btn, &__reject-btn {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+
+  }
+
+  &__reject-btn {
+    background: #eb5a40;
+  }
+
+  &__buttons-container {
+    display: flex;
+  }
+}
